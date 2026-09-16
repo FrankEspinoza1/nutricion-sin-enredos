@@ -1,0 +1,16 @@
+{
+  "name": "crud-servicios",
+  "version": "1.0.0",
+  "description": "CRUD de servicios - Evidencia 2 - Grupo 3",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  }
+}
