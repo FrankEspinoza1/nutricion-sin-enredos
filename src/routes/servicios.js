@@ -28,11 +28,11 @@ router.get('/:id', async (req, res) => {
 // CREAR  ->  POST /api/servicios
 router.post('/', async (req, res) => {
   try {
-    const { nombre, descripcion, precio, duracion } = req.body;
+    const { nombre, categoria, descripcion, precio, duracion } = req.body;
     if (!nombre || precio == null || duracion == null) {
       return res.status(400).json({ mensaje: 'Nombre, precio y duracion son obligatorios' });
     }
-    const servicio = await Servicio.create({ nombre, descripcion, precio, duracion });
+    const servicio = await Servicio.create({ nombre, categoria, descripcion, precio, duracion });
     res.status(201).json(servicio);
   } catch (error) {
     res.status(400).json({ mensaje: 'No se pudo crear el servicio' });

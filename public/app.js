@@ -10,6 +10,7 @@ const btnCancelar = document.getElementById('btnCancelar');
 const campos = {
   id:          document.getElementById('idServicio'),
   nombre:      document.getElementById('nombre'),
+  categoria:   document.getElementById('categoria'),
   descripcion: document.getElementById('descripcion'),
   precio:      document.getElementById('precio'),
   duracion:    document.getElementById('duracion')
@@ -24,6 +25,7 @@ function mostrarAviso(texto, esError) {
 function limpiarFormulario() {
   campos.id.value = '';
   campos.nombre.value = '';
+  campos.categoria.value = '';
   campos.descripcion.value = '';
   campos.precio.value = '';
   campos.duracion.value = '';
@@ -46,6 +48,7 @@ async function cargarServicios() {
     tabla.innerHTML = servicios.map(s => `
       <tr>
         <td class="fw-semibold">${s.nombre}</td>
+        <td class="small text-secondary">${s.categoria || '-'}</td>
         <td class="small text-secondary">${s.descripcion || '-'}</td>
         <td>S/ ${s.precio}</td>
         <td>${s.duracion} min</td>
@@ -64,6 +67,7 @@ async function cargarServicios() {
 btnGuardar.onclick = async () => {
   const datos = {
     nombre:      campos.nombre.value.trim(),
+    categoria:   campos.categoria.value.trim(),
     descripcion: campos.descripcion.value.trim(),
     precio:      Number(campos.precio.value),
     duracion:    Number(campos.duracion.value)
@@ -103,6 +107,7 @@ async function editarServicio(id) {
 
     campos.id.value = s._id;
     campos.nombre.value = s.nombre;
+    campos.categoria.value = s.categoria;
     campos.descripcion.value = s.descripcion;
     campos.precio.value = s.precio;
     campos.duracion.value = s.duracion;
