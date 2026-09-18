@@ -64,5 +64,15 @@ router.delete('/:id', async (req, res) => {
     res.status(400).json({ mensaje: 'No se pudo eliminar el servicio' });
   }
 });
-
+// BUSCAR por nombre  ->  GET /api/servicios/buscar/:texto
+router.get('/buscar/:texto', async (req, res) => {
+  try {
+    const servicios = await Servicio.find({
+      nombre: { $regex: req.params.texto, $options: 'i' }
+    });
+    res.json(servicios);
+  } catch (error) {
+    res.status(500).json({ mensaje: 'Error en la busqueda' });
+  }
+});
 module.exports = router;
