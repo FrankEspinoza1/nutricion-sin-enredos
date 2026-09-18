@@ -1,14 +1,14 @@
 # CRUD de Servicios - Nutricion Sin Enredos
 
 Proyecto de la Evidencia 2 (AA2) del curso Desarrollo y soporte de aplicaciones multiplataforma.
-Instituto Certus - Grupo 3.
+Instituto Certus - Grupo 2.
 
 ## Integrantes
 
 - Espinoza Espindola, Franklin
-- Huaman Ventura, Jesus
 - Paredes Torrejon, Jean
 - Taquire Rodriguez, Elmer
+- Rider Valdivia Espinoza
 
 ## Descripcion
 
